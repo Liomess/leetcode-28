@@ -1,0 +1,21 @@
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        wl=len(needle)
+        n=len(haystack)
+        n_idx=0
+        i=0
+        j=0
+        flag=True
+        while flag:
+            if j>=n:
+                break
+            if haystack[j]==needle[n_idx]:
+                j+=1
+                n_idx+=1
+                if (j-i)==wl:
+                    return i
+            else:
+                n_idx=0
+                j=i+1
+                i+=1
+        return -1
